@@ -56,6 +56,8 @@ window.App = {
       meta = instance;
       return meta.getBalance.call(account, {from: account});
     }).then(function(value) {
+      var balance_element = document.getElementById("account");
+      balance_element.innerHTML = account.valueOf();
       var balance_element = document.getElementById("balance");
       balance_element.innerHTML = value.valueOf();
     }).catch(function(e) {
